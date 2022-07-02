@@ -1,0 +1,831 @@
+.register_number_field .stepper input[type="number"] {
+    min-height: 60px;
+    text-align: left;
+}
+
+.register_number_field {
+    margin-bottom: 20px;
+}
+
+.register_number_field .stepper {
+    max-width: 100%;
+    width: 100%;
+}
+
+.register_number_field .stepper-arrow.up,
+.stepper-arrow.down {
+    display: none;
+}
+
+.form_details {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.match_history {
+    border-bottom: 1px solid #616161;
+    padding: 0px 15px;
+}
+
+.sport-table.match_history_wrep {
+    margin-bottom: 30px;
+}
+
+.sports_sideBar {
+    /* width: 340px; */
+    /* top: 0px; */
+    /* position: absolute; */
+    background: #2a2a2a;
+    color: #fff;
+    /* padding: 15px 0px; */
+    /* height: 280px; */
+}
+
+.all_tabs .sideBar_wrep {
+    display: none;
+}
+
+.all_sports_tabs .isotope-item {
+    width: 100%;
+}
+
+.sideBar_wrep {
+    /* padding-left: 15px;
+    padding-right: 15px;
+    position: relative; */
+}
+
+.sports_sideBar_manu li {
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.38;
+    border-bottom: 1px solid #e1e1e1;
+    transition: all 0.4s ease;
+}
+
+.moretext {
+    display: block;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: display .4s ease;
+}
+
+
+.moreless-button {
+    font-size: 18px;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+.sports_sideBar_manu li a {
+    color: #fff;
+    font-size: 16px;
+}
+
+.sports_sideBar_manu li:hover {
+    color: #fff;
+    background-color: #616161;
+    opacity: 1;
+}
+.sports_sideBar_manu a{
+    width: 100%;
+    display: inline-block;
+}
+
+/* team detailed */
+.match_wrap {
+    margin-top: 0px !important;
+}
+
+.isotope-filters-list-link.active:after {
+    display: none !important;
+}
+
+.team_live_name p {
+    display: inline-block;
+    margin: 0px;
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+.team_wrap {
+    background-color: #616161;
+    padding: 12px 23px 8px 23px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team_table {
+    background-color: #fff;
+}
+
+.team_name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #e1e1e1;
+}
+
+.team_score p {
+    margin: 0px;
+}
+
+.heading-component {
+    margin-bottom: 15px !important;
+}
+
+.tab_nav {
+    margin-bottom: 0px !important;
+}
+
+.tab_nav .nav-tabs .nav-link {
+    background-color: transparent;
+    border-color: #e1e1e1;
+    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0px 5px;
+    border-radius: 5px;
+}
+
+.tab_nav .nav-tabs .nav-link.active {
+    border: 1px solid #ff4f2e !important;
+    background: #ff4f2e;
+    padding: 6px 14px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.tab_nav .nav-tabs {
+    margin: 15px 0px;
+    border: none !important;
+}
+
+.score_wrap p,
+.score_about p {
+    display: inline-block;
+}
+
+.score_about p:nth-child(1) {
+    background-color: #a5d9fe;
+    color: #000;
+    padding: 10px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.score_about p:nth-child(2) {
+    background-color: #f8d0ce;
+    color: #000;
+    padding: 10px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.score_wrap p {
+    min-width: 60px;
+    text-align: center;
+}
+
+.leagues_details {
+    background-color: #fff;
+
+}
+
+.leagues_details li {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px;
+}
+
+.leagues_details li a {
+    width: 100%;
+    display: inline-block;
+}
+
+.match_status p {
+    font-size: 10px;
+    background: #64b000;
+    padding: 2px 15px;
+    border-radius: 30px;
+    text-transform: capitalize;
+}
+
+/* header area */
+/* banner area */
+.app_banner .carousel-control-prev,
+.app_banner .carousel-control-next {
+    background-color: #313539;
+    height: 50px;
+    width: 66px;
+    overflow: hidden;
+    transform: translate3d(0, -50%, 0);
+    top: 50%;
+    transform-origin: 100% 100%;
+    transform: skew(10deg);
+}
+
+.app_banner .carousel-control-next {
+    transform-origin: 100% 100%;
+    transform: skew(-10deg);
+}
+
+.app_banner .carousel-control-prev:hover,
+.app_banner .carousel-control-next:hover {
+    background-color: #64b000;
+}
+
+.app_banner .carousel-caption {
+    position: absolute;
+    right: 15%;
+    top: 20%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: left;
+    left: auto;
+}
+
+.app_banner .carousel-caption h1,
+.app_banner .carousel-caption h4,
+.app_banner .carousel-caption a {
+    color: #fff;
+}
+
+.app_banner .carousel-caption a:hover {
+    background-color: #64b000;
+    border-color: #64b000;
+}
+
+.all_section {
+    padding: 30px 0px 150px;
+}
+
+.all_sports_tabs .all_section {
+    padding: 0px !important;
+}
+
+.all_sports_tabs .col-md-3 {
+    display: none !important;
+}
+
+.all_sports_tabs .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+
+.all_sports_tabs .isotope-filters-list {
+    display: none;
+}
+
+.filter_data {
+    padding: 50px 0px;
+}
+
+/* open bets */
+/* .bet_wrap {
+    background-color: #313539;
+} */
+.collapes_card {
+    cursor: pointer;
+    padding: 0px 0px;
+}
+
+.collapes_card_wrap .card {
+    margin-bottom: 5px;
+}
+
+.collapes_card_wrap .card-body span {
+    font-size: 45px;
+    color: #f36c21;
+    text-align: center;
+    display: block;
+}
+
+.collapes_card_wrap .card-body p {
+    text-align: center;
+    color: #f36c21;
+    margin: 0px;
+    font-weight: 600;
+}
+
+.betting_wrap .nav {
+    justify-content: center;
+    background: #2a2a2a;
+    padding: 2px 0px;
+}
+
+.betting_wrap .nav-pills .nav-link.active,
+.betting_wrap .nav-pills .show>.nav-link {
+    background-color: transparent;
+    border-bottom: 2px solid #64b000;
+    color: #64b000;
+}
+
+.betting_wrap .nav-pills .nav-link {
+    padding: 5px 15px;
+    border-radius: 0px;
+    color: #fff;
+    border-bottom: 2px solid transparent;
+}
+
+.collapes_card_wrap .btn-link {
+    background: #64b000;
+    min-width: 220px;
+    border-radius: 0px;
+    text-align: left;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    text-decoration: none;
+}
+
+.collapes_card_wrap .btn-link:hover {
+    text-decoration: none;
+}
+
+.collapes_card_wrap .btn-link:focus {
+    box-shadow: none;
+}
+
+.collapes_card_wrap .btn-link::after {
+    position: absolute;
+    background: #64b000;
+    content: "";
+    top: -1px;
+    right: -18px;
+    clip-path: polygon(0 -1px, 100% -1px, 1px 100%, 0 100%);
+    width: 18px;
+    height: calc(100% + 2px);
+}
+
+.collapes_card h5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collapes_card h5 span {
+    padding-right: 15px;
+}
+
+/* // open bets */
+/* About Us page */
+.about_banner {
+    background-image: url("../images/about-Us.jpg");
+    height: 400px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.about_banner h2 {
+    color: #fff;
+    z-index: 1;
+}
+
+.about_banner_overlay {
+    position: absolute;
+    content: "";
+    background: #0000004a;
+    top: 0px;
+    left: 0px;
+    height: 400px;
+    width: 100%;
+}
+
+.about_text {
+    text-align: center;
+    padding: 70px 0px;
+}
+
+.about_text h2 {
+    border-bottom: 2px solid #000;
+    max-width: 210px;
+    margin: 0px auto;
+}
+
+.about_text p {
+    padding-top: 20px;
+}
+
+/* //  About Us page */
+.sports_sideBar_manu_heading {
+    position: relative;
+    background-color: #64b000;
+    width: 50%;
+    padding: 7px 15px;
+}
+
+.sports_sideBar_manu_heading h5 {
+    color: #fff;
+}
+
+.sports_sideBar_manu_heading::after {
+    position: absolute;
+    background: #64b000;
+    content: "";
+    top: 0px;
+    right: -18px;
+    clip-path: polygon(0 -1px, 100% -1px, 1px 100%, 0 100%);
+    width: 18px;
+    height: calc(100% + 0px);
+}
+
+/* Wallet area */
+.wallet_wrap {
+    padding: 30px 0px;
+    background-color: #383838;
+    border-top: 1px solid #e1e1e136;
+    border-bottom: 1px solid #e1e1e136;
+}
+
+.user_img {
+    text-align: center;
+}
+
+.user_img img {
+    border: 1px solid #d1d1d1;
+    padding: 10px;
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    cursor: pointer;
+}
+
+.user_img p {
+    margin: 0px;
+}
+
+.amount-box img {
+    width: 55px;
+    display: block;
+    margin: 0px auto;
+}
+
+.amount {
+    font-size: 35px;
+}
+
+.amount-box p {
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.btn-group {
+    margin: 20px 0;
+    display: block;
+    text-align: center;
+}
+
+.btn-group .btn {
+    margin: 8px;
+    border-radius: 20px !important;
+    font-size: 12px;
+    border-color: #64b000;
+    background-color: #64b000;
+    transition: all 0.5s ease;
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 180px;
+    padding: 8px 0px;
+}
+
+.btn-group .btn span {
+    vertical-align: inherit;
+    margin-left: 5px;
+}
+
+.btn-group .btn:hover {
+    opacity: .8;
+    color: #fff;
+}
+
+.btn-group .btn:focus,
+.amount_proceed_wrap .modal-footer .btn:focus {
+    box-shadow: none;
+}
+
+.wallet_amount {
+    width: 600px;
+    margin: 0px auto;
+    background: #000;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.amount_details_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 40px 0px;
+}
+
+.amount_proceed_wrap .modal-footer {
+    justify-content: center;
+}
+
+.amount_proceed_wrap .modal-footer .btn {
+    width: 100%;
+}
+
+.amount_proceed_wrap .modal-footer .btn:hover {
+    background-color: #64b000;
+    opacity: .8;
+    border-color: #64b000;
+}
+
+.amount_proceed_wrap .form-control:focus {
+    box-shadow: none;
+    border-color: #64b000;
+}
+
+.add_money_wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add_money_wrap .add_money {
+    background-color: #64b000;
+    min-width: 145px;
+    margin: 0px 5px 20px;
+    color: #fff;
+}
+
+.add_money_wrap .add_money:focus {
+    box-shadow: none;
+}
+
+.add_money_wrap .add_money:hover {
+    opacity: .8;
+}
+
+/* wallet history popup */
+.wallet_header {
+    position: relative;
+}
+
+.wallet_header .wallet_hstry {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 12px;
+}
+
+.wallet_header .wallet_hstry:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.wallet_header .wallet_hstry:focus {
+    box-shadow: none;
+}
+
+.wallet_table table tbody tr td {
+    background-color: #343a40;
+    color: #fff;
+    font-weight: bold;
+}
+
+.wallet_table table tbody tr td:last-child {
+    text-align: center;
+}
+
+.wallet_table table {
+    margin-bottom: 0px;
+}
+.history_modal_wrap .modal-header{
+    background: #343a40;
+}
+.history_modal_wrap .modal-title{
+    color: #fff;
+}
+.history_modal_wrap .modal-header  button span{
+    color: #fff;
+}
+/* // wallet history popup */
+
+/* // Wallet area */
+/* Slip Bat  */
+.slip_bat_wrap{
+    background-color: #fff;
+    padding: 10px;
+}
+.slip_team_name p{
+    margin: 0px;
+}
+.bet_and_money form label{
+    font-size: 11px;
+}
+.bet_and_money form .form-control{
+    height: 30px;
+    padding: 0px 30px;
+    font-size: 12px;
+}
+.bet_and_money form .betting {
+    position: relative;
+}
+.bet_and_money form .increment{
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    z-index: 1;
+    font-size: 24px;
+}
+.bet_and_money form button:focus {
+    box-shadow: none;
+}
+.bet_and_money form .form-control:focus{
+    box-shadow: none;
+    border-color: #64b000;
+}
+.bet_and_money form .decrement{
+    position: absolute;
+    top: 11px;
+    right: 8px;
+    font-size: 24px;
+    z-index: 1;
+}
+.add_money_wrap .add_money.bet_money{
+    min-width: 100% !important;
+    margin: 0px 0px 5px 0px !important;
+    border-radius: 0px;
+}
+
+.betting_btns{
+    margin-top: 15px;
+
+}
+.betting_btns button{
+    width: 100%;
+}
+
+.betting_btns .cancel_btn{
+    border: 1px solid #64b000;
+}
+.betting_btns .place_btn{
+    background-color: #64b000;
+    border: 1px solid #64b000;
+    color: #fff;
+}
+/* // Slip Bat  */
+.select_gender .form-input,
+.select_source .form-input {
+    -webkit-appearance: auto;
+}
+
+/* responsive css */
+@media (max-width: 1200px) {
+
+    .rd-navbar-toggle {
+        display: block !important;
+    }
+
+    .rd-navbar-wrap {
+        height: 0px !important;
+    }
+
+    .rd-navbar-main {
+        position: fixed;
+        left: 0;
+        top: -56px;
+        bottom: -56px;
+        z-index: 1089;
+        width: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        font-size: 14px;
+        line-height: 34px;
+        transform: translateX(-110%);
+        transition: all .5s ease;
+    }
+
+    .rd-navbar-main.active {
+        transform: translateX(0);
+        background: #383838;
+        z-index: -1090;
+    }
+
+    .rd-navbar-darker {
+        background-color: #383838 !important;
+    }
+
+    .rd-navbar-classic.rd-navbar-static .rd-navbar-main-container {
+        display: block !important;
+    }
+
+    .rd-navbar-classic.rd-navbar-static .rd-navbar-search {
+        width: 100% !important;
+        display: block;
+    }
+
+    .rd-navbar-static .rd-nav-item {
+        display: block !important;
+    }
+
+    .rd-navbar-static .rd-nav-item+.rd-nav-item {
+        margin-left: 0px !important;
+    }
+
+    .rd-navbar-dark .rd-navbar-classic .link {
+        font-size: 14px !important;
+        padding: 20px 20px 20px 0px !important;
+    }
+
+    .rd-navbar-collapse {
+        position: absolute;
+        top: 260px;
+        width: 100%;
+    }
+
+    .rd-navbar-brand {
+        padding: 120px 0px 15px;
+    }
+
+    .rd-navbar-panel {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 1090;
+        display: flex;
+        align-items: center;
+        height: 56px;
+        padding: 5px;
+        background: #2a2a2a;
+    }
+
+    .app_banner {
+        margin-top: 55px;
+    }
+}
+
+@media (max-width: 991px) {
+    .app_banner .carousel-caption {
+        right: 5%;
+        top: 10%;
+    }
+
+    .app_banner .carousel-caption h1 {
+        font-size: 20px;
+    }
+
+    .app_banner .carousel-caption h4 {
+        font-size: 14px;
+    }
+
+    .app_banner .button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .app_banner .carousel-caption {
+        top: 0px;
+        left: 5%;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    .app_banner .carousel-inner {
+        width: 720px;
+    }
+
+    .app_banner .button {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .app_banner .carousel-inner {
+        width: 560px;
+    }
+
+}
+/* // responsive css */

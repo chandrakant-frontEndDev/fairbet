@@ -1,0 +1,54 @@
+.score_about{
+    display: flex;
+}
+
+.back_button{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: #a5d9fe;
+    border-radius: 5px 0px 0px 5px;
+    line-height: 1.5;
+    justify-content: center;
+}
+
+.back_button:hover{
+    opacity: 0.80;
+}
+
+.back_button .back_odds {
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.back_button .back_audience{
+    font-size: 10px;
+}
+
+.lay_button{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: #f8d0ce;
+    border-radius: 0px 5px 5px 0px;
+    line-height: 1.5;
+    justify-content: center;
+}
+
+.lay_button:hover{
+    opacity: 0.80;
+}
+
+
+.lay_button .lay_odds {
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.lay_button .lay_audience{
+    font-size: 10px;
+}
