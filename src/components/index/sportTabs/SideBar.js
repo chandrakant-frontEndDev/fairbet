@@ -7,7 +7,7 @@ const SideBar = () => {
 
     return (
         <>
-            <div className='col-md-3'>
+            <div className='col-md-2'>
                 <div className="sideBar_wrep">
                     <div className="sports_sideBar">
                         <ul className="sports_sideBar_manu">

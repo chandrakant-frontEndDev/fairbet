@@ -1,59 +1,31 @@
-import axios from 'axios';
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import socketIOClient from 'socket.io-client';
-
+import { BsInfoCircleFill } from 'react-icons/bs'
 const OpenBets = (props) => {
 
-    // useEffect(() => {
-    //     let socket = new WebSocket("ws://148.251.21.118:5570");
-
-    //     socket.onopen = function (e) {
-    //         alert("[open] Connection established");
-    //         // alert("Sending to server");
-    //         // socket.send("My name is John");
-    //     };
-
-    //     socket.onmessage = function (event) {
-    //         // alert(`[message] Data received from server: ${event.data}`);
-    //         let mydata = JSON.parse(event.data);
-    //         // console.log('event.data', mydata.data.MatchId);
-
-    //         if(mydata.data.MatchId == 'p10031'){
-    //             // console.log(mydata.data.Over);
-    //             // console.log(mydata.data.T1);
-    //             // console.log(mydata.data.T2);
-    //             var teamOne = mydata.data.T1;
-    //         }
-    //         // console.log('event.data', JSON.parse(event.data.lay));
-    //         // console.log('event.data', event.data);
-    //     };
-
-    //     socket.onclose = function (event) {
-    //         if (event.wasClean) {
-    //             alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
-    //         } else {
-    //             // e.g. server process killed or network down
-    //             // event.code is usually 1006 in this case
-    //             alert('[close] Connection died');
-    //         }
-    //     };
-
-    //     socket.onerror = function (error) {
-    //         alert(`[error] ${error.message}`);
-    //     };
-
-    // }, [])
-
-
-
-    const [oddsIncrementCount, setOddsIncrementCount] = useState(0)
-    const oddsBackRef = useRef(null)
+    // ============================================= BetSlip Stake ==================================================
+    const [betSlipStakeVal, setBetSlipStakeVal] = useState(0);
+    const betSlipStake_Ref = useRef(null);
     // =========================================== oddsInputValue ==================================================
+    const [oddsIncrementCount, setOddsIncrementCount] = useState(0)
+
+    useEffect(() => {
+        let xyz = parseFloat(props.layoddsattr);
+        setOddsIncrementCount(xyz)
+    }, [props.layoddsattr])
+
+    useEffect(() => {
+        let abc = parseFloat(props.backoddsattr);
+        setOddsIncrementCount(abc)
+    }, [props.backoddsattr])
+
+
+
+
+    const oddsBackRef = useRef(null)
     function oddsIncrement() {
         let oddsInputValue = parseInt(oddsBackRef.current.value);
         setOddsIncrementCount(oddsInputValue + 1)
-        // console.log('e'.charCodeAt());
     }
     function oddsDecrement() {
         let oddsInputValue = parseInt(oddsBackRef.current.value);
@@ -62,16 +34,32 @@ const OpenBets = (props) => {
         } else { }
     }
     function oddsChangedValue(e) {
-        let eCode = 'e'.charCodeAt();
-        if (eCode === 101) {
-
+        let eCode = e.target.value;
+        console.log(eCode);
+        if (eCode === '') {
         } else {
-            setOddsIncrementCount(e.target.value)
+            setOddsIncrementCount((e.target.value.replace(/\D/g, '')))
         }
+    }
+    // =========================================== BetSlipStake Function ==================================================
+    function betSlipStake_change(e) {
+        let eCode = e.target.value;
+        if (eCode === '') {
+        } else {
+            setBetSlipStakeVal((e.target.value.replace(/\D/g, '')))
+        }
+        console.log("dsfjh");
+    }
+
+    function addStakeCount(e) {
+        let StakeCountVal = parseInt(e.target.value);
+        let StakeCountCurrentVal = parseInt(betSlipStakeVal);
+        setBetSlipStakeVal(StakeCountCurrentVal + StakeCountVal)
+        console.log(betSlipStake_Ref.current.value);
     }
     return (
         <>
-            <div className='col-md-3'>
+            <div className='col-md-4'>
                 <div className='betting_wrap'>
                     <ul className="nav nav-pills" id="pills-tab" role="tablist">
                         <li className="nav-item" >
@@ -85,8 +73,8 @@ const OpenBets = (props) => {
                         <div className="tab-pane fade" id="pills-slip" role="tabpanel" aria-labelledby="pills-slip-tab">
                             <div className='slip_bat_wrap'>
                                 <div className='slip_team_name'>
-                                    <p>Sri Lanka Women v India Women</p>
-                                    <p>Sri Lanka Women default</p>
+                                    <p>{props.matchnameattr}</p>
+                                    <p>{props.teamattr} default</p>
                                 </div>
                                 <div className='bet_and_money'>
                                     <form>
@@ -95,14 +83,14 @@ const OpenBets = (props) => {
                                                 <div className="form-group">
                                                     <label htmlFor="exampleInputOdds">Odds</label>
                                                     <button type='button' className='btn increment' onClick={oddsIncrement}>+</button>
-                                                    <input type="number" className="form-control betting" id="exampleInputOdds" aria-describedby="oddsHelp" ref={oddsBackRef} placeholder="Odds" min="0" onChange={oddsChangedValue} value={oddsIncrementCount} />
+                                                    <input type="number" className="form-control betting" id="exampleInputOdds" aria-describedby="oddsHelp" ref={oddsBackRef} placeholder="Odds" min="100" onChange={oddsChangedValue} value={oddsIncrementCount} />
                                                     <button type='button' className='btn decrement' onClick={oddsDecrement}>-</button>
                                                 </div>
                                             </div>
                                             <div className='col-6'>
                                                 <div className="form-group">
                                                     <label htmlFor="exampleInputMoney">Stake</label>
-                                                    <input type="number" className="form-control" id="exampleInputMoney" aria-describedby="moneyHelp" placeholder="Stake" />
+                                                    <input type="number" className="form-control" id="exampleInputMoney" aria-describedby="moneyHelp" placeholder="Stake" min="0" ref={betSlipStake_Ref} onChange={betSlipStake_change} value={betSlipStakeVal} />
                                                 </div>
                                             </div>
                                         </div>
@@ -110,22 +98,22 @@ const OpenBets = (props) => {
                                     <div className='add_money_wrap'>
                                         <div className='row'>
                                             <div className='col-4'>
-                                                <button type='button' className='btn add_money bet_money' value="500">+500</button>
+                                                <button type='button' className='btn add_money bet_money' value="500" onClick={addStakeCount}>+500</button>
                                             </div>
                                             <div className='col-4'>
-                                                <button type='button' className='btn add_money bet_money' value="1000">+1000</button>
+                                                <button type='button' className='btn add_money bet_money' value="1000" onClick={addStakeCount}>+1000</button>
                                             </div>
                                             <div className='col-4'>
-                                                <button type='button' className='btn add_money bet_money' value="2000">+2000</button>
+                                                <button type='button' className='btn add_money bet_money' value="2000" onClick={addStakeCount}>+2000</button>
                                             </div>
                                             <div className='col-4'>
-                                                <button type='button' className='btn add_money bet_money' value="4000">+4000</button>
+                                                <button type='button' className='btn add_money bet_money' value="4000" onClick={addStakeCount}>+4000</button>
                                             </div>
                                             <div className='col-4'>
-                                                <button type='button' className='btn add_money bet_money' value="5000">+5000</button>
+                                                <button type='button' className='btn add_money bet_money' value="5000" onClick={addStakeCount}>+5000</button>
                                             </div>
                                             <div className='col-4'>
-                                                <button type='button' className='btn add_money bet_money' value="6000">+6000</button>
+                                                <button type='button' className='btn add_money bet_money' value="6000" onClick={addStakeCount}>+6000</button>
                                             </div>
                                         </div>
                                     </div>
@@ -135,9 +123,16 @@ const OpenBets = (props) => {
                                                 <button type='button' className='btn cancel_btn'>CANCEL</button>
                                             </div>
                                             <div className='col-6'>
-                                                <button type='button' className='btn place_btn'>PLACE BET</button>
+                                                <button type='button' className='btn place_btn'>
+                                                    <span className='placeBet_text'>PLACE BET</span>
+                                                    <span className='profit_liability'>Profit:1000</span>
+                                                </button>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className='bat_info'>
+                                        <span className='bat_info_icon'><BsInfoCircleFill /></span>
+                                        <span className='bat_info_para'>Min Bet: 100 Max Bet: 100000 Max Winning: 100000</span>
                                     </div>
                                 </div>
                             </div>

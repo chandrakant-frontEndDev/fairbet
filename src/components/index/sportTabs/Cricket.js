@@ -5,10 +5,30 @@ import OpenBets from './OpenBets';
 import SideBar from './SideBar';
 import TabNav from './TabNav';
 const Cricket = () => {
+    // =============================================== Match States ================================================= 
+    const [matchType, setMatchType] = useState('Sri Lanka Women vs India Women')
+    const [matchTeamOne, setMatchTeamOne] = useState('Sri Lanka Women')
+    const [matchTeamTwo, setMatchTeamTwo] = useState('India Women')
+    // ============================================= getValue States ==================================================
+    const [teamAttr, setteamAttr] = useState('')
+    const [matchNameAttr, setmatchNameAttr] = useState('')
+    const [backoddsAttr, setbackoddsAttr] = useState('')
+    const [layOddsAttr, setLayOddsAttr] = useState('')
     // console.log("cricket ---- pills-slip-tab");
     const betSlipBtn = useRef(null)
-    function oddsButton() {
+    function oddsLayButton(e) {
         betSlipBtn.current.click()
+        setteamAttr(e.target.attributes.team.nodeValue);
+        setmatchNameAttr(e.target.attributes.matchname.nodeValue)
+        setLayOddsAttr(e.target.attributes.layodds.nodeValue)
+    }
+    
+    function oddsBackButton(e) {
+        // console.log(e.target.attributes.backodds.nodeValue);
+        betSlipBtn.current.click()
+        setteamAttr(e.target.attributes.team.nodeValue);
+        setmatchNameAttr(e.target.attributes.matchname.nodeValue)
+        setbackoddsAttr(e.target.attributes.backodds.nodeValue)
     }
 
 
@@ -25,9 +45,9 @@ const Cricket = () => {
 
     useEffect(() => {
 
-        setInterval(()=>{
+        setInterval(() => {
             dummyOdds();
-        },1000)
+        }, 2000)
     }, [])
 
 
@@ -129,7 +149,8 @@ const Cricket = () => {
                                         <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                             <div className="team_wrap">
                                                 <div className="team_live_name">
-                                                    <p>Sri Lanka </p> <span>V</span> <p>Australia</p>
+                                                    {/* <p>Sri Lanka </p> <span>V</span> <p>Australia</p> */}
+                                                    <p>{matchType}</p>
                                                     <div className="team_time">
                                                         <p>Tomorrow at 2:30 PM</p>
                                                         {/* <p>Current Over : {OverNumber}</p> */}
@@ -143,7 +164,7 @@ const Cricket = () => {
                                                 <div className="team_name">
                                                     <div className="team_name_wrap">
                                                         {/* <p>{teamName}</p> */}
-                                                        <p>SriLanka</p>
+                                                        <p>{matchTeamOne}</p>
                                                     </div>
                                                     <div className="team_score">
                                                         <div className="score_wrap">
@@ -151,12 +172,12 @@ const Cricket = () => {
                                                             <p>Lay</p>
                                                         </div>
                                                         <div className="score_about">
-                                                            <button className='back_button' onClick={oddsButton}>
+                                                            <button className='back_button' onClick={oddsBackButton} matchname={matchType} team={matchTeamOne} backodds={dummyOddsData.team1Back}>
                                                                 {/* <span className='back_odds'>{Back}</span> */}
                                                                 <span className='back_odds'>{dummyOddsData.team1Back}</span>
                                                                 <span className='back_audience'>4,455,420</span>
                                                             </button>
-                                                            <button className='lay_button' onClick={oddsButton}>
+                                                            <button className='lay_button' onClick={oddsLayButton} matchname={matchType} team={matchTeamOne} layodds={dummyOddsData.team1Lay}>
                                                                 {/* <span className='lay_odds'>{Lay}</span> */}
                                                                 <span className='lay_odds'>{dummyOddsData.team1Lay}</span>
                                                                 <span className='lay_audience'>4,455,420</span>
@@ -167,7 +188,7 @@ const Cricket = () => {
                                                 <div className="team_name">
                                                     <div className="team_name_wrap">
                                                         {/* <p>{opponentTeam}</p> */}
-                                                        <p>India</p>
+                                                        <p>{matchTeamTwo}</p>
                                                     </div>
                                                     <div className="team_score">
                                                         <div className="score_wrap">
@@ -175,11 +196,12 @@ const Cricket = () => {
                                                             <p>Lay</p>
                                                         </div>
                                                         <div className="score_about">
-                                                            <button className='back_button' onClick={oddsButton}>
+                                                            <button className='back_button' onClick={oddsBackButton} matchname={matchType} team={matchTeamTwo} backodds={dummyOddsData.team2Back}>
                                                                 <span className='back_odds'>{dummyOddsData.team2Back}</span>
                                                                 <span className='back_audience'>4,455,420</span>
                                                             </button>
-                                                            <button className='lay_button' onClick={oddsButton}>
+                                                            <button className='lay_button' onClick={oddsLayButton} matchname={matchType} team={matchTeamTwo}
+                                                            layodds={dummyOddsData.team2Lay}>
                                                                 <span className='lay_odds'>{dummyOddsData.team2Lay}</span>
                                                                 <span className='lay_audience'>4,455,420</span>
                                                             </button>
@@ -202,7 +224,7 @@ const Cricket = () => {
                                 {/* <!-- // Live and upcoming page --> */}
                             </div>
                         </div>
-                        <OpenBets betSlipBtn={betSlipBtn} />
+                        <OpenBets betSlipBtn={betSlipBtn} teamattr={teamAttr} matchnameattr={matchNameAttr} backoddsattr={backoddsAttr} layoddsattr={layOddsAttr}/>
                     </div>
                 </div>
             </div>
